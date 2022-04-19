@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timetable>
+    <department category="CSE">
+        <slot lang="en">A1</slot>
+        <coursecode>ECE3502</coursecode>
+        <coursename>IOT</coursename>
+    </department>
+
+    <department category="CSE">
+        <slot lang="en">B1</slot>
+        <coursecode>CSE3022</coursecode>
+        <coursename>AI</coursename>
+    </department>
+
+    <department category="CSE">
+        <slot lang="en">C1</slot>
+        <coursecode>STS3502</coursecode>
+        <coursename>STS</coursename>
+    </department>
+
+    <department category="CSE">
+        <slot lang="en">E1</slot>
+        <coursecode>CSE4022</coursecode>
+        <coursename>NLP</coursename>
+    </department>
+
+    <department category="CSE">
+        <slot lang="en">F1</slot>
+        <coursecode>CSE3002</coursecode>
+        <coursename>IWP</coursename>
+    </department>
+
+</timetable>
+
+

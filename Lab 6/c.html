@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 Task 3 19BCE1872</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<script>
+    function courseFunction(check, txt) {
+        var checkBox = document.getElementById(check);
+        var text = document.getElementById(txt);
+        if (checkBox.checked == true) {
+            text.style.display = "block";
+        }
+        else {
+            text.style.display = "none";
+        }
+    }
+
+</script>
+
+<body>
+    <div style="text-align: center; font-size: 20px;">
+
+        <h2>Tick the boxes to display the available slots</h2>
+
+        <label for="myCheck1">Parallel and Distributed Computing:</label>
+        <input type="checkbox" id="myCheck1" onclick="courseFunction('myCheck1','text1')">
+        <p id="text1" style="display:none">Slots Available: B1+TB1, B2+TB2</p>
+
+        <br>
+
+        <label for="myCheck2">Natural Language Processing: </label>
+        <input type="checkbox" id="myCheck2" onclick="courseFunction('myCheck2','text2')">
+        <p id="text2" style="display:none">Slots Available: D1,D2, TDD1</p>
+
+        <br>
+
+        <label for="myCheck3">Applied Linear Algebra: </label>
+        <input type="checkbox" id="myCheck3" onclick="courseFunction('myCheck3','text3')">
+        <p id="text3" style="display:none">Slots Available: F1,F2</p>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+The CSE Curriculum is
+Virtualization
+Cloud Computing
+Big Data

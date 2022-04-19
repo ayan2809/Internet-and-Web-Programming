@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Aniket Bansal 19BCE1869 Lab 10 Task 3</h2>
+    <div id="demo">
+
+
+    </div>
+    <button type="button" onclick="abc()">Change Content for first div</button>
+    <div id="demo2">
+
+    </div>
+    <button type="button" onclick="abc2()">Change Content for second div</button>
+    <script>
+        function abc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "a.txt", true);
+            xhttp.send();
+        }
+        function abc2() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo2").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "b.txt", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

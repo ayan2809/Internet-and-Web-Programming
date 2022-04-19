@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_5_Q1_19BCE1872</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<script>
+    function display() 
+    {
+        var radios = document.getElementsByTagName('input');
+        var value;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].type === 'radio' && radios[i].checked) {
+                value = radios[i].value;
+                str = value.toUpperCase();
+                document.getElementById("result").innerHTML = "Course Name: " + str;
+            }
+        }
+    }
+</script>
+
+<body>
+    <h2>Choose the course</h2>
+    <input type="radio" name="x" id="y" value="Large Scale Data Pre-Processing">Large Scale Data Pre-Processing
+    <input type="radio" name="x" id="y" value="Natural Language Processing">Natural Language Processing
+    <input type="radio" name="x" id="y" value="Internet of Things">Internet of Things
+    <br><br>
+    <input type="button" onclick="display()" value="Submit" style= "width: 100px; height: 30px;">
+    <br>
+    <br>
+    <div id="result"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 Task 4</title>
+    <script>
+        function incrementValue() {
+            var value1 = parseInt(document.getElementById('number1').value, 10);
+            var value2 = parseInt(document.getElementById('number2').value, 10);
+            var value3 = parseInt(document.getElementById('number3').value, 10);
+            if (value1 === 11 && value2 === 23 && value3 === 47)
+                alert("Correct");
+            else
+                alert("Incorrect");
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Q9sLfMrH8_w" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <h3>5+6</h3>
+        <input type="text" id="number1" placeholder="Enter the answer" />
+        <br>
+        <h3>11+12</h3>
+        <input type="text" id="number2" placeholder="Enter the answer" />
+        <br>
+        <h3>23+24</h3>
+        <input type="text" id="number3" placeholder="Enter the answer" />
+        <br>
+        <br>
+        <input type="button" onclick="incrementValue() " value="Check your answers " />
+    </center>
+
+
+</body>
+
+</html>

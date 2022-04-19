@@ -1,0 +1,24 @@
+{
+    "Student": [
+        {
+            "Name": "Ayan",
+            "CAT1": "43"
+        },
+        {
+            "Name": "Suhas",
+            "CAT1": "35"
+        },
+        {
+            "Name": "Manas",
+            "CAT1": "35"
+        },
+        {
+            "Name": "Akshat",
+            "CAT1": "25"
+        },
+        {
+            "Name": "Aniket",
+            "CAT1": "15"
+        }
+    ]
+}

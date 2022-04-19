@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19BCE1872_Lab_9_Task3</title>
+
+    <script>
+        function myFunction() {
+            const message = document.getElementById("p01");
+            message.innerHTML = "";
+            var number = document.getElementById("demo").value;
+            try {
+                if (number == "") {
+                    throw "The Input is empty";
+                }
+                number = Number(number);
+                var even = 0;
+                var odd = 0;
+
+                while (number != 0) {
+                    var r = number % 10;
+                    if (r % 2 === 0)
+                        even = Math.max(r, even);
+
+                    else
+                        odd = Math.max(r, odd);
+
+                    number = parseInt(number / 10);
+                }
+                if (even < odd) throw odd;
+                if (even > odd) throw even;
+            } catch (err) {
+                message.innerHTML = "The Output is " + err;
+            }
+            finally {
+                alert("This is a demo of exception handliing")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <p>Enter the number:</p>
+
+    <input id="demo" type="text">
+    <br>
+    <br>
+    <button type="button" onclick="myFunction()">Check the Number</button>
+    <p id="p01"></p>
+
+
+</body>
+
+</html>

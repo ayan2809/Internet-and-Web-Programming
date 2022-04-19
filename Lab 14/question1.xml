@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<collegedata>
+    <department category="CSE">
+        <regd lang="en">19BCE1872</regd>
+        <name>Ayan Sadhukhan</name>
+        <marks>19</marks>
+    </department>
+
+    <department category="CSE">
+        <regd lang="en">19BCE1869</regd>
+        <name>Aniket Bansal</name>
+        <marks>28</marks>
+    </department>
+
+    <department category="AI">
+        <regd lang="en">19BAI1877</regd>
+        <name>Chandru S</name>
+        <marks>26</marks>
+    </department>
+
+    <department category="CSE">
+        <regd lang="en">19BCE1616</regd>
+        <name>Achintya Kumar</name>
+        <marks>40</marks>
+    </department>
+
+    <department category="AI">
+        <regd lang="en">19BAI1817</regd>
+        <name>Suhas Reddy</name>
+        <marks>20</marks>
+    </department>
+
+</collegedata>

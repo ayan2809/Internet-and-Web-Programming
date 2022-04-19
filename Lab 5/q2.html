@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_5_q2_19BCE1872</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<script>
+    function display() {
+        var radios = document.getElementsByTagName('input');
+        var value;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].type === 'radio' && radios[i].checked) {
+                value = radios[i].value;
+                document.getElementById("text").style.color = value;
+            }
+        }
+    }
+</script>
+
+<body>
+    <h2>Select a colour</h2>
+    <input type="radio" name="colour" value="red" onclick="display()">red
+    <input type="radio" name="colour" value="blue" onclick="display()">blue
+    <input type="radio" name="colour" value="green" onclick="display()">green
+    <br><br>
+    <input type="button" onclick="display()" value="Change the colour!" />
+    <br><br>
+    <div id="text" style="color: black;">
+        
+        <h4>Ayan Sadhukhan - 19BCE1872</h4
+    
+    </div>
+
+</body>
+
+</html>

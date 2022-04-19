@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Aniket Bansal 19BCE1869 Lab 10 Task 1</h2>
+<div id="demo">
+<button type="button" onclick="abc()">Change Content</button>
+</div>
+<script>
+function abc() 
+{
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() 
+	{
+		alert(xhttp.readyState);
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			document.getElementById("demo").innerHTML =this.responseText;
+		}
+	};
+	xhttp.open("GET","b.txt",true);
+	xhttp.send();
+}
+</script>
+</body>
+</html> 

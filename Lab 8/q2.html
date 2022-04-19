@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19BCE1872 Ayan Sadhukhan Lab 8 Task 2</title>
+</head>
+
+<body>
+
+    <!-- input of the register number -->
+    <h3>Enter your Register Number</h3>
+    <textarea id="inputRegister" name="inputRegister" rows="2" cols="50">
+    </textarea>
+    <br>
+    <button type="button1" onclick="getElectives(); disabled=true;">Check the electives!</button>
+    <br>
+    <br>
+    <h1>OR</h1>
+    <br>
+    <br>
+    <h3>Enter your Branch</h3>
+    <textarea id="inputBranch" name="inputBranch" rows="2" cols="50">
+    </textarea>
+    <br>
+    <button type="button2" onclick="getElectives(); disabled=true;">Check the electives!</button>
+
+    <br>
+    <br>
+    <script>
+
+        function generateRandom(min, max) {
+
+            let difference = max - min;
+            let rand = Math.random();
+            rand = Math.floor(rand * difference);
+            rand = rand + min;
+            return rand;
+        }
+
+        function createTable(CourseNames, CourseCode, Name) {
+            var table = document.createElement("table");
+            table.style.width = '100%';
+            table.setAttribute('border', '1');
+
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = "Elective";
+            cell2.innerHTML = "Credits";
+            cell3.innerHTML = "Course Code";
+            for (var i = 0; i < CourseNames.length; i++) {
+                var row = table.insertRow(i + 1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.setAttribute('id', 'abcdefgh'.charAt(i) + 'cell1' + Name);
+                cell2.setAttribute('id', 'abcdefgh'.charAt(i) + 'cell2' + Name);
+                cell3.setAttribute('id', 'abcdefgh'.charAt(i) + 'cell3' + Name);
+                cell1.innerHTML = CourseNames[i];
+                cell2.innerHTML = generateRandom(1, 4)
+                cell3.innerHTML = CourseCode[i];
+            }
+            document.body.appendChild(table);
+        }
+
+        function clickEventFunction(courseName, courseTeacher) {
+            var element1 = document.getElementById('acell3'+ courseName);
+            var element2 = document.getElementById('bcell3'+ courseName);
+
+            element1.onclick = function () {
+                alert("Faculty for the course " + this.parentNode.cells[0].innerHTML + " is " + courseTeacher[0]);
+            }
+
+            element2.onclick = function () {
+                alert("Faculty for the course " + this.parentNode.cells[0].innerHTML + " is " + courseTeacher[1]);
+            }
+
+        }
+
+        function getElectives() {
+            const ECEelectives = ['IOT', 'Embedded']
+            const ECEcode = ['ECE3502', 'ECE3001']
+            const ECEcourseTeacher = ['Prof Maheswari', 'Dr. Saraswathi']
+            const CSEelectives = ['ML', 'NLP']
+            const CSEcode = ['CSE4001', 'CSE4002']
+            const CSEcourseTeacher = ['Dr. Sivagami', 'Prof. Hema']
+            const ECMElectives = ['DAA', 'DBMS']
+            const ECMcode = ['BLC2002', 'BLC2004']
+            const ECMcourseTeacher = ['Dr. Vetrivelan', 'Dr. Jayalakshmi']
+            const BMEElectives = ['Structure', 'Thermo']
+            const BMEcode = ['BME3201', 'BME3491']
+            const BMECourseTeacher = ['Prof. John', 'Dr. Arun Kumar']
+            const EEEelectives = ['VLSI', 'RF']
+            const EEEcode = ['EEE3507', 'EEE3006']
+            const EEECourseTeacher = ['Dr. Manasi', 'Dr. Ravi Shankar']
+
+
+            var RegisterNumber = document.getElementById("inputRegister").value;
+            var Branch = document.getElementById("inputBranch").value;
+
+            console.log(Branch);
+
+            if (RegisterNumber.includes("BEC") || RegisterNumber.includes("bec") || Branch.includes("ECE") || Branch.includes("ece")) {
+                // create a table using the electives of BEC
+                createTable(ECEelectives, ECEcode, 'ECE');
+                clickEventFunction('ECE', ECEcourseTeacher);
+                
+
+
+            } else if (RegisterNumber.includes("BCE") || RegisterNumber.includes("bce") || Branch.includes("CSE") || Branch.includes("cse")) {
+                // create a table using the electives of CSE
+                createTable(CSEelectives, CSEcode, 'CSE');
+                clickEventFunction('CSE', CSEcourseTeacher);
+
+            } else if (RegisterNumber.includes("BLC") || RegisterNumber.includes("blc") || Branch.includes("ECM") || Branch.includes("ecm")) {
+                // create a table using the electives of ECM
+                createTable(ECMElectives, ECMcode, 'ECM');
+                clickEventFunction('ECM', ECMcourseTeacher);
+
+            } else if (RegisterNumber.includes("BME") || RegisterNumber.includes("bme") || Branch == "BME" || Branch == "bme") {
+                // create a table using the electives of BME
+                createTable(BMEElectives, BMEcode, 'BME');
+                clickEventFunction('BME', BMEcourseTeacher);
+            }
+            else if (RegisterNumber.includes("EEE") || RegisterNumber.includes("eee") || Branch.includes("EEE") || Branch.includes("eee")) {
+                // create a table using the electives of EEE
+                createTable(EEEelectives, EEEcode, 'EEE');
+                clickEventFunction('EEE', EEECourseTeacher);
+            } else {
+                alert("Invalid Register Number");
+            }
+
+           
+
+
+
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

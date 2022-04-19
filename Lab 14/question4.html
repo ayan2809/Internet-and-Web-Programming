@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Lab 14 Task 4 19BCE1872</h2>
+<p id="demo"></p>
+ 
+<script>
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+    }
+  xhttp.open("GET", "question4.php", true);
+  xhttp.send();
+
+</script>
+
+</body>
+</html>

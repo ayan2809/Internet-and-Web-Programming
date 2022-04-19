@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 Task 1</title>
+    <script>
+        function checkOdd() {
+            var number = document.getElementById("oddNumber").value;
+            if(number%2===0)
+            {
+                document.getElementById('oddResult').innerHTML = 'Number is even';
+                return;
+            }
+            document.getElementById('oddResult').innerHTML = 'Number is odd';
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+
+        <!-- for checking the odd -->
+    <form>
+        <input type="number" id="oddNumber" name="oddNumber" style="padding: 10px;">
+        <button type="button" onclick="checkOdd()">Check Odd!</button>
+        <textarea readonly id="oddResult" name="oddResult" rows="1" cols="30"></textarea>
+    </form>
+
+    </center>
+</body>
+
+
+</html>

@@ -1,0 +1,4 @@
+The BAI curriculum is
+AI
+ML
+EDA

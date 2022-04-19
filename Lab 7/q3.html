@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19BCE1872 Ayan Sadhukhan Question 3</title>
+</head>
+
+<body>
+
+    <body>
+        <p id="UnsortedElements"></p>
+        <p id="SortedElementsDescending"></p>
+        <p id="SortedElementsAscending"></p>
+        <script>
+
+            a = [345, 667, 234, 63, 23, 56]
+
+            document.getElementById("UnsortedElements").innerHTML = "Unsorted numbers:" + a;
+
+
+            function mergeAscending(arr, l, m, r) {
+                var n1 = m - l + 1;
+                var n2 = r - m;
+                var L = new Array(n1);
+                var R = new Array(n2);
+
+                for (var i = 0; i < n1; i++)
+                    L[i] = arr[l + i];
+                for (var j = 0; j < n2; j++)
+                    R[j] = arr[m + 1 + j];
+
+
+
+                var i = 0;
+
+                var j = 0;
+
+                var k = l;
+
+                while (i < n1 && j < n2) {
+                    if (L[i] <= R[j]) {
+                        arr[k] = L[i];
+                        i++;
+                    }
+                    else {
+                        arr[k] = R[j];
+                        j++;
+                    }
+                    k++;
+                }
+
+
+                while (i < n1) {
+                    arr[k] = L[i];
+                    i++;
+                    k++;
+                }
+
+
+                while (j < n2) {
+                    arr[k] = R[j];
+                    j++;
+                    k++;
+                }
+            }
+
+
+            function mergeDescending(arr, l, m, r) {
+                var n1 = m - l + 1;
+                var n2 = r - m;
+                var L = new Array(n1);
+                var R = new Array(n2);
+
+                for (var i = 0; i < n1; i++)
+                    L[i] = arr[l + i];
+                for (var j = 0; j < n2; j++)
+                    R[j] = arr[m + 1 + j];
+
+
+
+                var i = 0;
+
+                var j = 0;
+
+                var k = l;
+
+                while (i < n1 && j < n2) {
+                    if (L[i] >= R[j]) {
+                        arr[k] = L[i];
+                        i++;
+                    }
+                    else {
+                        arr[k] = R[j];
+                        j++;
+                    }
+                    k++;
+                }
+
+
+                while (i < n1) {
+                    arr[k] = L[i];
+                    i++;
+                    k++;
+                }
+
+
+                while (j < n2) {
+                    arr[k] = R[j];
+                    j++;
+                    k++;
+                }
+            }
+
+
+            function mergeSortAscending(arr, l, r) {
+                if (l >= r) {
+                    return;
+                }
+                var m = l + parseInt((r - l) / 2);
+                mergeSortAscending(arr, l, m);
+                mergeSortAscending(arr, m + 1, r);
+                mergeAscending(arr, l, m, r);
+            }
+
+            function mergeSortDescending(arr, l, r) {
+                if (l >= r) {
+                    return;
+                }
+                var m = l + parseInt((r - l) / 2);
+                mergeSortDescending(arr, l, m);
+                mergeSortDescending(arr, m + 1, r);
+                mergeDescending(arr, l, m, r);
+            }
+
+            mergeSortDescending(a, 0, a.length - 1)
+
+            document.getElementById("SortedElementsDescending").innerHTML = "Sorted numbers in Descending:" + a;
+
+            mergeSortAscending(a, 0, a.length - 1)
+
+            document.getElementById("SortedElementsAscending").innerHTML = "Sorted numbers in Ascending:" + a;
+        </script>
+    </body>
+
+</html>

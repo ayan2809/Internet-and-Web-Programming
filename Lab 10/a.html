@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Aniket Bansal Lab 10_Task 2</h2>
+<div id="demo">
+<button type="button" onclick="abc()">Change Content</button>
+</div>
+<script>
+function abc() 
+{
+	var files=["a.txt", "b.txt", "c.txt"]
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() 
+	{
+		alert(xhttp.readyState);
+		if (this.readyState == 4 && this.status == 200) 
+		{
+			document.getElementById("demo").innerHTML =this.responseText;
+		}
+	};
+	xhttp.open("GET","s.php",true);
+	xhttp.send();
+}
+</script>
+</body>
+</html> 

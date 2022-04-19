@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 Task 3</title>
+    <script>
+        // function to convert number to respective type based on the input
+        function convertNumber() {
+            let number =  parseInt(document.getElementById("enterNumber").value);
+            let type = document.getElementById("NumberType").value;
+            console.log(number);
+            console.log(type); 
+            // convert number to binary
+            if (type === "binary") {
+                document.getElementById('Result').innerHTML =  `${number} in binary is ${number.toString(2)}`;
+            }
+            // convert number to octal
+            else if (type === "octal") {
+                document.getElementById('Result').innerHTML = `${number} in octal is ${number.toString(8)}`;
+            }
+            // convert number to hexadecimal
+            else if (type === "hexadecimal") {
+                document.getElementById('Result').innerHTML = `${number} in hexadecimal is ${number.toString(16).toUpperCase()}`;
+            }
+            else{
+                alert("Enter a valid number or type");
+            }
+            
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <form>
+            <input type="number" id="enterNumber" name="enterNumber" style="padding: 10px;"
+                placeholder="Enter the Number">
+            <input type="text" id="NumberType" name="NumberType" style="padding: 10px;" placeholder="Enter the type">
+            <br>
+            <br>
+            <br>
+            <button type="button" onclick="convertNumber()">Convert!</button>
+            <br>
+            <br>
+            <textarea readonly id="Result" name="primeResult" rows="1" cols="30"></textarea>
+        </form>
+    </center>
+</body>
+
+</html>
